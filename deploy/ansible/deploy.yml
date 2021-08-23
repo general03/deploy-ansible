@@ -1,0 +1,7 @@
+---
+- name: Exchange Keys between servers
+  hosts: multi
+  tasks:
+    - name: Generate the pair SSH private and public keys
+      community.crypto.openssh_keypair:
+      path: ~/.ssh/id_rsa

@@ -1,0 +1,23 @@
+image: python:3.8
+
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  before_script:
+    - python -m pip install --user ansible boto3
+    - export PATH=$PATH:~/.local/bin
+    - echo "https://rigaudie.fr" > ~/ansible_hosts
+    - export ANSIBLE_INVENTORY=~/ansible_hosts
+    
+    # - ansible all -m ping -vvv 
+  script:
+    - ansible-playbook deploy/ansible/deploy.yml -vvvv
+  
+  only:
+    - feature*
+
+  tags:
+    - docker
+    - runner
