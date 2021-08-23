@@ -11,10 +11,11 @@
     - name: Copy site contents
       copy:
         dest: "{{ path_web }}/"
-        src: "usr/share/"
+        src: "/usr/share/"
         owner: root
         group: root
         mode: 0755
+        remote_src: yes
 
     - name: Git checkout
       ansible.builtin.git:
