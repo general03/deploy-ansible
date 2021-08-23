@@ -10,7 +10,7 @@ deploy:
     - export PATH=$PATH:~/.local/bin
     - echo "https://rigaudie.fr" > ~/ansible_hosts
     - export ANSIBLE_INVENTORY=~/ansible_hosts
-    - ansible-galaxy collection install community.crypto
+    
     # - ansible all -m ping -vvv 
   script:
     - ansible-playbook deploy/ansible/deploy.yml -vvvv
