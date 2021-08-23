@@ -1,7 +1,23 @@
 ---
 - name: Exchange Keys between servers
   hosts: multi
+  vars:
+    path_web: /usr/src/app
   tasks:
     - name: Generate the pair SSH private and public keys
       community.crypto.openssh_keypair:
         path: ~/.ssh/id_rsa
+
+    - name: Copy site contents
+      copy:
+        dest: "{{ path_web }}/"
+        src: "usr/share/"
+        owner: root
+        group: root
+        mode: 0755
+
+    - name: Git checkout
+      ansible.builtin.git:
+        repo: 'https://foosball.example.org/path/to/repo.git'
+        dest: /srv/checkout
+        version: release-0.22
