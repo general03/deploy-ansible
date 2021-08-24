@@ -37,7 +37,7 @@
 
     - name: Git checkout
       ansible.builtin.git:
-        repo: 'ssh://git@github.com:general03/deploy-ansible.git'
+        repo: 'ssh://git@github.com/general03/deploy-ansible.git'
         dest: "{{ path_web }}"
         version: master
         # version: release-0.22
