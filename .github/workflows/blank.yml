@@ -30,7 +30,7 @@ jobs:
           python -m pip install --user ansible
           export PATH=$PATH:~/.local/bin
           
-          echo '-----BEGIN OPENSSH PRIVATE KEY-----
+          echo "-----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAACFwAAAAdzc2gtcn
 NhAAAAAwEAAQAAAgEAyOkjjEiSSQnbaReJ4TLR6q31p04A5RRugzEkrPQvSR7yWZx87owG
 +/zHrBlocohl6HR/wwxO6XcxNTbTYXTdXhrPTu/okOTUe75EHy4UMDA51DcXpY7Sow4bC2
@@ -77,7 +77,7 @@ AvmCbkkG/eNaUAAAEBANnD1ua+fDV63s/2Ldh9CCusH/gPQ6NBBf6Z41/mpuMu9f5MnqF+
 B9206DPQsQdqTfvhvvLA6utyTEMmiplm9tlA+ngwEJPAkAK22xHwsy8ykoKVCje1rdDXda
 WNz9j3Xl+/+qGVimY/cZ2pcCs7XShwqhCs14rJDJpwO20OU/TTbTS27kOTjvzNnzsQXeSs
 TMyJgnJArJqgDXPyYqN7cYEHtU57nP+GGphYKeQdlRmJOMf8I6zo61PWn9Tf6rDbHoAeNK
-LGHe9eKGiHUAAAASZGF2aWRAZGF2aWQtbGFwdG9wAQ==' > /home/david/.ssh/deploy-ansible-rvb
+LGHe9eKGiHUAAAASZGF2aWRAZGF2aWQtbGFwdG9wAQ==" > /home/david/.ssh/deploy-ansible-rvb
           
           ansible-galaxy collection install community.crypto
           ansible-playbook deploy/ansible/deploy.yml -i deploy/ansible/inventory -vvvv
