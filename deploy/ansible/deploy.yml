@@ -19,6 +19,7 @@
 
     - name: Git checkout
       ansible.builtin.git:
-        repo: 'https://foosball.example.org/path/to/repo.git'
+        repo: 'https://github.com/general03/deploy-ansible.git'
         dest: /srv/checkout
-        version: release-0.22
+        version: master
+        # version: release-0.22
