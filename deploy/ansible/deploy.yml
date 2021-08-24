@@ -1,9 +1,12 @@
 ---
 - name: Exchange Keys between servers
   hosts: server
+
   vars:
     path_web: /root
+    path_pub_key: /root/.ssh/key
     pub_key_github: "{{ lookup('env', 'PUB_GITHUB_DEPLOY') }}"
+    
   tasks:
 
     # - name: Generate the pair SSH private and public keys
@@ -19,7 +22,7 @@
 
     - name: Create public file key
       copy:
-        dest: "/root/.ssh/key"
+        dest: "{{ path_pub_key }}"
         content: "{{ pub_key_github }}"
 
     # - name: Copy site contents
@@ -38,4 +41,4 @@
         version: master
         # version: release-0.22
         accept_hostkey: yes
-        key_file: "/root/.ssh/key"
+        key_file: "{{ path_pub_key }}"
