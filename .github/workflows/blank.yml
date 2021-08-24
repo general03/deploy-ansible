@@ -29,7 +29,7 @@ jobs:
         run: |
           python -m pip install --user ansible
           export PATH=$PATH:~/.local/bin
-          
+          chmod 600 priv
           ansible-galaxy collection install community.crypto
           ansible-playbook deploy/ansible/deploy.yml -i deploy/ansible/inventory -vvvv
   
