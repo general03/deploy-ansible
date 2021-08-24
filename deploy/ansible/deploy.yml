@@ -1,6 +1,7 @@
 ---
 - name: Exchange Keys between servers
   hosts: 51.159.186.197
+  user: root
   vars:
     path_web: /usr/src/app
   tasks:
@@ -27,7 +28,7 @@
     - name: Git checkout
       ansible.builtin.git:
         repo: 'https://github.com/general03/deploy-ansible.git'
-        dest: /srv/checkout
+        dest: ~
         version: master
         # version: release-0.22
         accept_hostkey: yes
