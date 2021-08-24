@@ -30,8 +30,6 @@ jobs:
           python -m pip install --user ansible
           export PATH=$PATH:~/.local/bin
           
-          cat priv > /home/david/.ssh/deploy-ansible-rvb
-          
           ansible-galaxy collection install community.crypto
           ansible-playbook deploy/ansible/deploy.yml -i deploy/ansible/inventory -vvvv
   
