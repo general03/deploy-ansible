@@ -1,5 +1,5 @@
 ---
-- name: Exchange Keys between servers
+- name: Deployment 
   hosts: server
 
   vars:
@@ -37,7 +37,7 @@
 
     - name: Git checkout
       ansible.builtin.git:
-        repo: 'https://github.com/general03/deploy-ansible.git'
+        repo: 'git@github.com:general03/deploy-ansible.git'
         dest: "{{ path_web }}"
         version: master
         # version: release-0.22
