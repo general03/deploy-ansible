@@ -30,6 +30,7 @@ jobs:
           python -m pip install --user ansible
           export PATH=$PATH:~/.local/bin
           echo "51.159.186.197" > ~/ansible_hosts
+          
           export ANSIBLE_INVENTORY=~/ansible_hosts
           ansible-galaxy collection install community.crypto
           ansible-playbook deploy/ansible/deploy.yml -vvvv
