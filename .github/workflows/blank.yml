@@ -30,7 +30,7 @@ jobs:
           python -m pip install --user ansible
           export PATH=$PATH:~/.local/bin
           chmod 600 priv
-          ssh-add priv
+          ssh-add pub
           ansible-galaxy collection install community.crypto
           ansible -i deploy/ansible/inventory -m ping all
           
