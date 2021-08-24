@@ -33,6 +33,7 @@ jobs:
           
           ansible-galaxy collection install community.crypto
           ansible -i deploy/ansible/inventory -m ping all
+          ping 51.159.186.197
           
           
 # ansible-playbook deploy/ansible/deploy.yml -i deploy/ansible/inventory -vvvv
