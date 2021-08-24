@@ -1,7 +1,6 @@
 ---
 - name: Exchange Keys between servers
-  hosts: 51.159.186.197
-  user: root
+  hosts: server
   vars:
     path_web: /usr/src/app
   tasks:
