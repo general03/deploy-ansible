@@ -2,32 +2,32 @@
 - name: Exchange Keys between servers
   hosts: server
   vars:
-    path_web: /usr/src/app
+    path_web: /root
   tasks:
 
-    - name: Generate the pair SSH private and public keys
-      community.crypto.openssh_keypair:
-        path: ~/.ssh/deploy
+    # - name: Generate the pair SSH private and public keys
+    #   community.crypto.openssh_keypair:
+    #     path: ~/.ssh/deploy
 
-    - name: Ensure .ssh directory exists.
-      file:
-        path: /var/www/.ssh
-        state: directory
-        mode: 0700
+    # - name: Ensure .ssh directory exists.
+    #   file:
+    #     path: /var/www/.ssh
+    #     state: directory
+    #     mode: 0700
 
-    - name: Copy site contents
-      copy:
-        dest: "~/.ssh/deploy"
-        src: "~/.ssh/id_rsa"
-        owner: root
-        group: root
-        mode: 0755
-        remote_src: yes
+    # - name: Copy site contents
+    #   copy:
+    #     dest: "~/.ssh/deploy"
+    #     src: "~/.ssh/id_rsa"
+    #     owner: root
+    #     group: root
+    #     mode: 0755
+    #     remote_src: yes
 
     - name: Git checkout
       ansible.builtin.git:
         repo: 'https://github.com/general03/deploy-ansible.git'
-        dest: ~
+        dest: {{ path_web }}
         version: master
         # version: release-0.22
         accept_hostkey: yes
