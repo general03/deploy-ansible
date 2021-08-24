@@ -24,6 +24,7 @@
       copy:
         dest: "{{ path_pub_key }}"
         content: "{{ pub_key_github }}"
+        mode: 0600
 
     # - name: Copy site contents
     #   copy:
