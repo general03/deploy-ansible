@@ -42,4 +42,4 @@
         version: master
         # version: release-0.22
         accept_hostkey: yes
-        key_file: "./priv"
+        key_file: "/root/.ssh/key.priv"
