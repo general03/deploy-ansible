@@ -3,6 +3,7 @@
   hosts: server
   vars:
     path_web: /root
+    pub_key_github: "{{ lookup('env', 'PUB_GITHUB_DEPLOY') }}"
   tasks:
 
     # - name: Generate the pair SSH private and public keys
@@ -31,4 +32,4 @@
         version: master
         # version: release-0.22
         accept_hostkey: yes
-        key_file: "{{ PUB_GITHUB_DEPLOY }}"
+        key_file: "{{ pub_key_github }}"
