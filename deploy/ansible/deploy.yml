@@ -3,7 +3,7 @@
   hosts: server
 
   vars:
-    path_web: /root
+    path_web: /root/rvb
     path_pub_key: /root/.ssh/key
     pub_key_github: "{{ lookup('env', 'PUB_GITHUB_DEPLOY') }}"
     
