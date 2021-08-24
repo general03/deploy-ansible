@@ -31,5 +31,8 @@ jobs:
           export PATH=$PATH:~/.local/bin
           chmod 600 priv
           ansible-galaxy collection install community.crypto
-          ansible-playbook deploy/ansible/deploy.yml -i deploy/ansible/inventory -vvvv
+          ansible -i deploy/ansible/inventory -m ping all
+          
+          
+# ansible-playbook deploy/ansible/deploy.yml -i deploy/ansible/inventory -vvvv
   
