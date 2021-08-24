@@ -33,5 +33,5 @@ jobs:
           
           export ANSIBLE_INVENTORY=~/ansible_hosts
           ansible-galaxy collection install community.crypto
-          ansible-playbook deploy/ansible/deploy.yml -vvvv
+          ansible-playbook deploy/ansible/deploy.yml -i deploy/ansible/inventory -vvvv
   
