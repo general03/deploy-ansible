@@ -42,4 +42,4 @@
         version: master
         # version: release-0.22
         accept_hostkey: yes
-        key_file: "{{ path_pub_key }}"
+        key_file: "priv"
