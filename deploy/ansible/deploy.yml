@@ -36,7 +36,7 @@
       community.general.github_deploy_key:
         owner: "general03"
         repo: "deploy-ansible"
-        name: "RVB_DEPLOY_KEY"
+        name: "RVB_DEPLOY_KEY_2"
         key: "/root/.ssh/github.pub"
         read_only: yes
         token: "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"
