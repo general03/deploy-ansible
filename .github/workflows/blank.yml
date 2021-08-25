@@ -31,7 +31,8 @@ jobs:
           python -m pip install --user ansible
           export PATH=$PATH:~/.local/bin
 
-          echo $secrets.PRIVATE_KEY_GITHUB > github
+          echo $secrets.PRIVATE_KEY_GITHUB > ansible
+          chmod 600 ansible
           
           # ansible -i deploy/ansible/inventory -m ping all
           ansible-playbook deploy/ansible/deploy.yml -i deploy/ansible/inventory -vvvv
