@@ -32,11 +32,8 @@ jobs:
           export PATH=$PATH:~/.local/bin
 
           echo "${{ secrets.PRIVATE_KEY_GITHUB }}" > ansible
-          # 
-          # awk '{ sub("\r$", ""); print }' ansible.tmp > ansible
-          # rm ansible.tmp
           chmod 600 ansible
           
-          ansible -i deploy/ansible/inventory -m ping all
-          # ansible-playbook deploy/ansible/deploy.yml -i deploy/ansible/inventory -vvvv
+          # ansible -i deploy/ansible/inventory -m ping all
+          ansible-playbook deploy/ansible/deploy.yml -i deploy/ansible/inventory -vvvv
   
