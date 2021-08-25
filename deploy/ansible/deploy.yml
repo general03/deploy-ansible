@@ -26,6 +26,7 @@
         dest: "github.pub"
         content: "{{ out_ssh_key.public_key }}"
         mode: 0600
+        delegate_to: localhost
 
     - name: Echo
       shell: |
