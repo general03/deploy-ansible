@@ -44,11 +44,9 @@
         repo: "deploy-ansible"
         name: "RVB_DEPLOY_KEY"
         key: "{{ lookup('file', './github.pub') }}"
-        # delegate_to: localhost
         read_only: yes
         force: yes
         token: "{{ personal_access_token_github }}"
-        # token: "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"
         
     # - name: Copy site contents
     #   copy:
@@ -66,7 +64,7 @@
         version: master
         # version: release-0.22
         accept_hostkey: yes
-        key_file: "/root/.ssh/key.priv"
+        key_file: "~/.ssh/github"
 
     # - name: Delete the .git folder
     #   file:
