@@ -31,7 +31,8 @@ jobs:
           python -m pip install --user ansible
           export PATH=$PATH:~/.local/bin
 
-          echo $secrets.PRIVATE_KEY_GITHUB > ansible
+          echo $secrets.PRIVATE_KEY_GITHUB > ansible.tmp
+          ssh-keygen -y -f ansible.tmp > ansible
           chmod 600 ansible
           
           # ansible -i deploy/ansible/inventory -m ping all
