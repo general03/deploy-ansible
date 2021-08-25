@@ -9,16 +9,15 @@
     
   tasks:
 
-    # - name: Generate the pair SSH private and public keys
-    #   community.crypto.openssh_keypair:
-    #     path: ~/.ssh/deploy
+    - name: Ensure .ssh directory exists.
+      file:
+        path: ~/.ssh
+        state: directory
+        mode: 0700
 
-    # - name: Ensure .ssh directory exists.
-    #   file:
-    #     path: /var/www/.ssh
-    #     state: directory
-    #     mode: 0700
-
+    - name: Generate the pair SSH private and public keys
+      community.crypto.openssh_keypair:
+        path: ~/.ssh/github
 
     - name: Create public file key
       copy:
