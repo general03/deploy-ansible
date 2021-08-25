@@ -26,7 +26,7 @@
         dest: "./github.pub"
         content: "{{ out_ssh_key.public_key }}"
         mode: 0600
-        delegate_to: localhost
+      delegate_to: localhost
 
     # - name: Echo
     #   shell: |
@@ -44,7 +44,7 @@
         repo: "deploy-ansible"
         name: "RVB_DEPLOY_KEY"
         key: "{{ lookup('file', './github.pub') }}"
-        delegate_to: localhost
+        # delegate_to: localhost
         read_only: yes
         force: yes
         token: "{{ personal_access_token_github }}"
