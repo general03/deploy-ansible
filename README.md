@@ -17,6 +17,18 @@ Il faut commencer par générer une paire de clé SSH. Garder le clé privée et
 #   -- Run 'scw-fetch-ssh-keys --upgrade'
 ```
 
+## Générer les clés SSH
+
+Il faut lancer la commande `ssh-keygen -t rsa -b 4096`
+
+/!\ Ne pas mettre de passphrase
+
+Il gènère une clé privée (sans .pub) et une clé public
+
+La clé privée doit OBLIGATOIREMENT avoir des droits `600`
+
+Il faut bien vérifier que la clé public est dans le fichier  ~/.ssh/authorized_keys du serveur (fait par la commande scaleway)
+
 ## Inventory Ansible
 
 Il est nécessaire de configurer l'inventory avec votre clé SSH créée juste avant
@@ -32,6 +44,7 @@ Il est nécessaire de configurer l'inventory avec votre clé SSH créée juste a
 Il est nécessaire de configurer les variables d'env dans la CD de Github/Gitlab
 
 - TOKEN_GITHUB => Personnal Access Token de Github
+- PRIVATE_KEY_GITHUB => Clé privée pour se connecter au serveur (généré à la 1er étape)
 
 ### local
 
