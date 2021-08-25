@@ -42,7 +42,7 @@
         owner: "general03"
         repo: "deploy-ansible"
         name: "RVB_DEPLOY_KEY"
-        key: "/root/.ssh/github.pub"
+        key: "{{ lookup('file', '/root/.ssh/github.pub') }}"
         read_only: yes
         force: yes
         token: "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"
