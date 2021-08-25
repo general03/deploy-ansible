@@ -44,3 +44,8 @@
         accept_hostkey: yes
         key_file: "/root/.ssh/key.priv"
         separate_git_dir: "/tmp/rvb"
+
+    - name: Delete the .git folder
+      file:
+        path: /tmp/rvb
+        state: absent
