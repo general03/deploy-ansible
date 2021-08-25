@@ -18,7 +18,14 @@
     - name: Generate the pair SSH private and public keys for Github repo
       community.crypto.openssh_keypair:
         path: ~/.ssh/github
+      register: out_ssh_key
 
+    - name: Create public file key 
+      copy:
+        dest: "/root/.ssh/github.pub"
+        content: "{{ out_ssh_key.public_key }}"
+        mode: 0600
+        
     # - name: Create public file key 
     #   copy:
     #     dest: "{{ path_pub_key }}"
