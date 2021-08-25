@@ -32,8 +32,9 @@ jobs:
           export PATH=$PATH:~/.local/bin
 
           echo $secrets.PRIVATE_KEY_GITHUB > ansible.tmp
-          chmod 600 ansible.tmp
-          ssh-keygen -y -f ansible.tmp > ansible
+          # 
+          awk '{ sub("\r$", ""); print }' ansible.tmp > ansible
+          rm ansible.tmp
           chmod 600 ansible
           
           # ansible -i deploy/ansible/inventory -m ping all
