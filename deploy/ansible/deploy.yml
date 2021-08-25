@@ -18,18 +18,18 @@
 
     - name: Generate the pair SSH private and public keys for Github repo
       community.crypto.openssh_keypair:
-        path: ~/.ssh/github
+        path: ~/.ssh/github2
       register: out_ssh_key
 
     - name: Create public file key 
       copy:
-        dest: "/root/.ssh/github.pub"
+        dest: "/root/.ssh/github2.pub"
         content: "{{ out_ssh_key.public_key }}"
         mode: 0600
 
-    - name: Echo
-      shell: |
-        cat /root/.ssh/github.pub
+    # - name: Echo
+    #   shell: |
+    #     cat /root/.ssh/github.pub
 
     # - name: Create public file key 
     #   copy:
@@ -42,7 +42,7 @@
         owner: "general03"
         repo: "deploy-ansible"
         name: "RVB_DEPLOY_KEY"
-        key: "/root/.ssh/github.pub"
+        key: "/root/.ssh/github2.pub"
         read_only: yes
         token: "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"
 
