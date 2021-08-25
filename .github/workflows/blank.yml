@@ -31,10 +31,10 @@ jobs:
           python -m pip install --user ansible
           export PATH=$PATH:~/.local/bin
 
-          echo $secrets.PRIVATE_KEY_GITHUB > ansible.tmp
+          echo "${{ secrets.PRIVATE_KEY_GITHUB }} > ansible
           # 
-          awk '{ sub("\r$", ""); print }' ansible.tmp > ansible
-          rm ansible.tmp
+          # awk '{ sub("\r$", ""); print }' ansible.tmp > ansible
+          # rm ansible.tmp
           chmod 600 ansible
           
           # ansible -i deploy/ansible/inventory -m ping all
