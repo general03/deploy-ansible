@@ -43,4 +43,4 @@
         # version: release-0.22
         accept_hostkey: yes
         key_file: "/root/.ssh/key.priv"
-        separate_git_dir: "/tmp"
+        separate_git_dir: "/tmp/rvb"
