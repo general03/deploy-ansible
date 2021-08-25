@@ -45,7 +45,7 @@
         key: "{{ lookup('file', 'github.pub') }}"
         read_only: yes
         force: yes
-        token: {{ personal_access_token_github }}
+        token: "{{ personal_access_token_github }}"
         # token: "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"
         
     # - name: Copy site contents
