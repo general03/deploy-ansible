@@ -1,4 +1,8 @@
-# Generate SSH key Scaleway
+# Comment configurer Ansible avec les Actions Github
+
+Il faut commencer par générer une paire de clé SSH. Garder le clé privée et pour la clé public suivre le procédure de Scaleway ci dessous
+
+## Generate SSH key Scaleway
 
 ```
 # To add a new key, you can:
@@ -13,4 +17,30 @@
 #   -- Run 'scw-fetch-ssh-keys --upgrade'
 ```
 
-# TODO
+## Inventory Ansible
+
+Il est nécessaire de configurer l'inventory avec votre clé SSH créée juste avant
+```
+[server]
+51.159.186.197 ansible_ssh_user=root ansible_ssh_private_key_file=id_rsa
+```
+
+## Variables 
+
+### env
+
+Il est nécessaire de configurer les variables d'env dans la CD de Github/Gitlab
+
+- TOKEN_GITHUB => Personnal Access Token de Github
+
+### local
+
+Il faut éventuellement modifier les variables du playbook
+
+Les étapes d'ajout du token et du clone doivent être adaptées pour pointer sur le bon repository
+
+## Github Action
+
+Il faut aller dans l'onglet Action de Github et choisir un workflow custom. Faites le commit.
+
+A chaque push sur la branche (précisée dans le yml) un workflow sera lancé avec le playbook Ansible.

@@ -6,14 +6,12 @@ stages:
 deploy:
   stage: deploy
   before_script:
-    - python -m pip install --user ansible boto3
+    - python -m pip install --user ansible
     - export PATH=$PATH:~/.local/bin
-    - echo "https://rigaudie.fr" > ~/ansible_hosts
-    - export ANSIBLE_INVENTORY=~/ansible_hosts
     
-    # - ansible all -m ping -vvv 
+    # -ansible -i deploy/ansible/inventory -m ping all
   script:
-    - ansible-playbook deploy/ansible/deploy.yml -vvvv
+    - ansible-playbook deploy/ansible/deploy.yml -i deploy/ansible/inventory -vvvv
   
   only:
     - feature*
