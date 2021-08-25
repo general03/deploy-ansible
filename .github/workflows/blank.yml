@@ -27,6 +27,7 @@ jobs:
       - name: Run a multi-line script
         env:
             PUB_GITHUB_DEPLOY: ${{ secrets.PUB_GITHUB_DEPLOY }}
+            TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
         run: |
           python -m pip install --user ansible
           export PATH=$PATH:~/.local/bin
