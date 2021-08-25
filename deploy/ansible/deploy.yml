@@ -6,6 +6,7 @@
     path_web: /root/rvb
     path_pub_key: /root/.ssh/key
     pub_key_github: "{{ lookup('env', 'PUB_GITHUB_DEPLOY') }}"
+    personal_access_token_github: "{{ lookup('env', 'TOKEN_GITHUB') }}"
     
   tasks:
 
@@ -26,6 +27,10 @@
         content: "{{ out_ssh_key.public_key }}"
         mode: 0600
 
+    - name: Echo
+      shell: |
+        echo /root/.ssh/github.pub
+
     # - name: Create public file key 
     #   copy:
     #     dest: "{{ path_pub_key }}"
@@ -39,7 +44,7 @@
         name: "RVB_DEPLOY_KEY"
         key: "/root/.ssh/github.pub"
         read_only: yes
-        token: "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é"
+        token: "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"
 
 
     # - name: Copy site contents
