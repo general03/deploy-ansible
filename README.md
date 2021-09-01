@@ -43,7 +43,7 @@ Il est nécessaire de configurer l'inventory avec votre clé SSH créée juste a
 
 Il est nécessaire de configurer les variables d'env dans la CD de Github/Gitlab
 
-- TOKEN_GITHUB => Personnal Access Token de Github
+- TOKEN_GITHUB => Personnal Access Token de Github ou Personal Access Token de Gitlab (dans les settings utilisateur)
 - PRIVATE_KEY_ANSIBLE => Clé privée pour se connecter au serveur (généré à la 1er étape)
 
 ### local
@@ -57,3 +57,11 @@ Les étapes d'ajout du token et du clone doivent être adaptées pour pointer su
 Il faut aller dans l'onglet Action de Github et choisir un workflow custom. Faites le commit.
 
 A chaque push sur la branche (précisée dans le yml) un workflow sera lancé avec le playbook Ansible.
+
+## Gitlab Runner
+
+Il faut ajouter le fichier ansible.cfg avec   
+`interpreter_python = auto`
+
+Cela évite les erreurs 
+`Failed to import the required Python library (python-gitlab) on bloog's Python /usr/bin/python3. Please read the module documentation and install it in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter`
