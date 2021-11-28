@@ -43,7 +43,7 @@ Il est nécessaire de configurer l'inventory avec votre clé SSH créée juste a
 
 Il est nécessaire de configurer les variables d'env dans la CD de Github/Gitlab
 
-- TOKEN_GITHUB => Personnal Access Token de Github ou Personal Access Token de Gitlab (dans les settings utilisateur)
+- TOKEN_GITHUB => Personnal Access Token de Github ou Personal Access Token de Gitlab (dans les settings utilisateur) avec comme scope api et read_repository
 - PRIVATE_KEY_ANSIBLE => Clé privée pour se connecter au serveur (généré à la 1er étape)
 
 ### local
