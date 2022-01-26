@@ -19,7 +19,7 @@ Il faut commencer par générer une paire de clé SSH. Garder le clé privée et
 
 ## Générer les clés SSH
 
-Il faut lancer la commande `ssh-keygen -t rsa -b 4096`
+Il faut lancer la commande `ssh-keygen -t rsa -b 4096` (dans la console scaleway)
 
 /!\ Ne pas mettre de passphrase
 
@@ -44,6 +44,7 @@ Il est nécessaire de configurer l'inventory avec votre clé SSH créée juste a
 Il est nécessaire de configurer les variables d'env dans la CD de Github/Gitlab
 
 - TOKEN_GITHUB => Personnal Access Token de Github ou Personal Access Token de Gitlab (dans les settings utilisateur) avec comme scope api et read_repository
+Ce token va nous permettre de générer un "deploy key" à partir d'une clé SSH public (https://gitlab.itarverne.com/help/user/project/deploy_keys/index), et donc utiliser la clé privée pour faire notre checkout 
 - PRIVATE_KEY_ANSIBLE => Clé privée pour se connecter au serveur (généré à la 1er étape)
 
 ### local
