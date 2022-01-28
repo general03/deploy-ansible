@@ -1,3 +1,12 @@
+# Schema de base
+
+![schema](https://user-images.githubusercontent.com/2324694/151509329-36123ca0-9054-4416-9ef8-39d1eabc4133.png)
+
+1. On initie une connexion au serveur déclaré dans l'inventory (dans .gitlab-ci.yml)
+2. On génère une paire de clé SSH à la volé pour générer le deploy key (voir étape 3)
+3. On crée une deploy key à partir de la cléé ssh de l'étape 2 afin de faire notre checkout
+4. On récupère le code du repo sur le serveur Ansible
+
 # Comment configurer Ansible avec les Actions Github
 
 Il faut commencer par générer une paire de clé SSH. Garder le clé privée et pour la clé public suivre le procédure de Scaleway ci dessous
