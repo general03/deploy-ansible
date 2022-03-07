@@ -7,7 +7,11 @@ deploy:
   stage: deploy
   before_script:
     - python -m pip install --user ansible
+    - python -m pip install python-gitlab
     - export PATH=$PATH:~/.local/bin
+    - ssh-keyscan -H <1.2.3.4> >> ~/.ssh/known_hosts
+    - echo "$PRIVATE_KEY_ANSIBLE" > ~/.ssh/ansible
+    - export ANSIBLE_CONFIG=deploy/ansible/ansible.cfg
 
     - echo 'Vérification du role custom...'
     - pipenv run ansible-playbook deploy/ansible/deploy.yml
