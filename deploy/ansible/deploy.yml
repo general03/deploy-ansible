@@ -1,9 +1,6 @@
 ---
 - name: Deployment 
   hosts: server
-  roles:
-    - role: pipenv
-
   vars:
     path_web: /root/rvb
     branch_to_deploy: master
@@ -16,6 +13,7 @@
         path: ~/.ssh
         state: directory
         mode: 0700
+      import_role: pipenv
 
     - name: Generate the pair SSH private and public keys for Github repo
       community.crypto.openssh_keypair:

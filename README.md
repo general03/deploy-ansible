@@ -79,4 +79,9 @@ Cela évite les erreurs
 
 - Il faut installer le module `pipenv install ansible`
 - Créer le scrafold `ansible-galaxy init pipenv`
-- 
+- Mettre le contenu du role dans le dossier `tasks`
+- Ajouter dans le playbook 
+```
+  roles:
+    - role: pipenv
+```
