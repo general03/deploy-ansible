@@ -1,6 +1,8 @@
 ---
 - name: Deployment 
   hosts: server
+  roles:
+    - role: pipenv
 
   vars:
     path_web: /root/rvb

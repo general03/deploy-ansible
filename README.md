@@ -57,3 +57,9 @@ Les étapes d'ajout du token et du clone doivent être adaptées pour pointer su
 Il faut aller dans l'onglet Action de Github et choisir un workflow custom. Faites le commit.
 
 A chaque push sur la branche (précisée dans le yml) un workflow sera lancé avec le playbook Ansible.
+
+# Création custom rôle
+
+- Il faut installer le module `pipenv install ansible`
+- Créer le scrafold `ansible-galaxy init pipenv`
+- 

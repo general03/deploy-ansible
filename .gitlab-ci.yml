@@ -8,6 +8,9 @@ deploy:
   before_script:
     - python -m pip install --user ansible
     - export PATH=$PATH:~/.local/bin
+
+    - echo 'Vérification du role custom...'
+    - pipenv run ansible-playbook deploy/ansible/deploy.yml
     
     # -ansible -i deploy/ansible/inventory -m ping all
   script:

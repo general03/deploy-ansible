@@ -1,0 +1,4 @@
+---
+- name: install pipenv
+  pip:
+    name: pipenv
