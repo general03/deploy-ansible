@@ -8,9 +8,11 @@
     personal_access_token_github: "{{ lookup('env', 'TOKEN_GITHUB') }}"
     
   tasks:
-    - name: Ensure .ssh directory exists.
+    - name: Get pipenv
       import_role: 
         name: pipenv
+        
+    - name: Ensure .ssh directory exists.
       file:
         path: ~/.ssh
         state: directory
