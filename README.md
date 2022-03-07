@@ -79,6 +79,8 @@ Cela évite les erreurs
 
 # Création custom rôle
 
+Pourquoi faire une rôle => https://docs.ansible.com/ansible/latest/user_guide/index.html#writing-tasks-plays-and-playbooks
+
 - Il faut installer le module `pipenv install ansible`
 - Créer le scrafold `ansible-galaxy init pipenv`
 - Mettre le contenu du role dans le dossier `tasks`
