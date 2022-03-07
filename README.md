@@ -87,6 +87,12 @@ Cela évite les erreurs
   roles:
     - role: pipenv
 ```
+ou alors créer une tâche
+```
+- name: Get pipenv
+  import_role: 
+    name: pipenv
+```
 
 # Errors
 
