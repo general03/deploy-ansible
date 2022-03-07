@@ -9,11 +9,12 @@
     
   tasks:
     - name: Ensure .ssh directory exists.
+      import_role: 
+        name: pipenv
       file:
         path: ~/.ssh
         state: directory
         mode: 0700
-      import_role: pipenv
 
     - name: Generate the pair SSH private and public keys for Github repo
       community.crypto.openssh_keypair:
