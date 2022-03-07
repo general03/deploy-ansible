@@ -35,7 +35,7 @@ jobs:
           chmod 600 ansible
 
           echo 'Vérification du role custom...'
-          pipenv run ansible-playbook deploy/ansible/deploy.yml
+          ansible-playbook deploy/ansible/deploy.yml
           
           # ansible -i deploy/ansible/inventory -m ping all
           ansible-playbook deploy/ansible/deploy.yml -i deploy/ansible/inventory -vvvv
