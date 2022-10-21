@@ -36,7 +36,9 @@ Il gènère une clé privée (sans .pub) et une clé public
 
 La clé privée doit OBLIGATOIREMENT avoir des droits `600`
 
-Il faut bien vérifier que la clé public est dans le fichier  ~/.ssh/authorized_keys du serveur (fait par la commande scaleway)
+Il faut bien vérifier que la clé public est dans le fichier  ~/.ssh/authorized_keys du serveur :
+- fait par la commande scaleway
+- ou par la commande `ssh-copy-id -i ~/.ssh/key.pub <USER SERVER>@<IP SERVER>`
 
 ## Inventory Ansible
 
