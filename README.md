@@ -87,3 +87,17 @@ Cela évite les erreurs
   roles:
     - role: pipenv
 ```
+
+# Errors
+
+## `Failed to connect to the host via ssh: Host key verification failed` lors de la connexion SSH
+
+- Si vous avez cette erreur, ajoutez dans `ansible.cfg`
+```
+[defaults]
+host_key_checking = False
+```
+- OU encore mieux il faut ajouter le fingerprints depuis le runner gitlab (dans le fichier `.gitlab.yml`)
+```
+ssh-keyscan -H <IP SERVER> >> ~/.ssh/known_hosts
+```
